@@ -4,7 +4,7 @@ const color = document.getElementById("colorPicker");
 const matrix = document.getElementById("pixelCanvas");
 const size = document.getElementById("sizePicker");
 
-//submit grid size
+//Submitting grid size
 size.addEventListener("submit", function(evt) {
     evt.preventDefault();
     const h = document.getElementById("inputHeight").value; //height element
@@ -13,7 +13,7 @@ size.addEventListener("submit", function(evt) {
     
 });
 
-// When size is submitted by the user, call makeGrid()
+//When size is submitted by the user, call makeGrid()
  function makeGrid(h, w) {
     matrix.innerHTML = "";
     for (let x = 0; x < h; x++) {
