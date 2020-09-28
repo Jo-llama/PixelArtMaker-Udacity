@@ -37,19 +37,17 @@ However it doesn't work perfectly.
 Once the cell is colored, the clicking doesn't undo the color, 
 but if I pick another color from the picker after double click the cell color changes:
 
-function makeGrid(h, w) {
-    matrix.innerHTML = "";
+function makeGrid (h, w) {matrix.innerHTML = ""; 
     for (let x = 0; x < h; x++) {
-        let tr = matrix.insertRow(x);  //storing rows in variable
+        let row = matrix.insertRow(x);
         for (let y = 0; y < w; y++) {
-            let td = tr.insertCell(y); //storing columns in variable
-            td.addEventListener("click", function(evt) {
+            let cell = row.insertCell(y);
+            cell.addEventListener("click", function(evt) {
                 let classes = evt.target.classList;
                 let result = classes.toggle("style");
                 if (result) {
                     evt.target.style.backgroundColor = color.value;
                 }
-                else
             });
         }
     }
