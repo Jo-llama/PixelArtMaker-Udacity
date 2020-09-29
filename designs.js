@@ -15,8 +15,8 @@ size.addEventListener("submit", function(evt) {
 
 //When size is submitted by the user, call makeGrid()
  function makeGrid(h, w) {
-    matrix.innerHTML = "";
-     //creating the grid by adding rows and cells
+    matrix.innerHTML = ""; //reseting the matrix everytime when user click submit button
+     //creating the matrix by adding rows and cells
     for (let x = 0; x < h; x++) {
         let tr = matrix.insertRow(x);  
         for (let y = 0; y < w; y++) {
@@ -41,7 +41,7 @@ Once the cell is colored, the clicking doesn't undo the color,
 but if I pick another color from the picker after double click the cell color changes:
 
 function makeGrid(h, w) {
-    matrix.innerHTML = "";
+    matrix.innerHTML = ""; //reseting the matrix everytime when user click submit button
     //creating the grid by adding rows and cells
     for (let x = 0; x < h; x++) {
         let tr = matrix.insertRow(x);  
