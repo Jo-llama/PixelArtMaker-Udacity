@@ -14,11 +14,16 @@ size.addEventListener("submit", function(evt) {
 });
 
 //When size is submitted by the user, call makeGrid()
-makeGrid = function (h, w) {matrix.innerHTML = ""; 
+makeGrid = function (h, w) {
+    //reseting matrix
+    matrix.innerHTML = "";
+    //adding rows to matrix
     for (let x = 0; x < h; x++) {
         let row = matrix.insertRow(x);
+        //adding cells to matrix 
         for (let y = 0; y < w; y++) {
             let cell = row.insertCell(y);
+            //adding style to cell 
             cell.addEventListener("click", function(evt) {
                 let classes = evt.target.classList;
                 let result = classes.toggle("style");
