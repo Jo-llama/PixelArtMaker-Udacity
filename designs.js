@@ -16,14 +16,17 @@ size.addEventListener("submit", function(evt) {
 //When size is submitted by the user, call makeGrid()
  function makeGrid(h, w) {
     matrix.innerHTML = "";
+     //creating the grid by adding rows and cells
     for (let x = 0; x < h; x++) {
-        let tr = matrix.insertRow(x);  //storing rows in variable
+        let tr = matrix.insertRow(x);  
         for (let y = 0; y < w; y++) {
-            let td = tr.insertCell(y); //storing columns in variable
+            let td = tr.insertCell(y);
+            //removing color from the cell if the cell isn't white
             td.addEventListener("click", function(evt) {
                 if (evt.target.hasAttribute("style")) {
                     evt.target.removeAttribute("style");
                 } 
+                //applying color to white cell
                 else { 
                     evt.target.style.backgroundColor = color.value;
                 }
@@ -39,10 +42,12 @@ but if I pick another color from the picker after double click the cell color ch
 
 function makeGrid(h, w) {
     matrix.innerHTML = "";
+    //creating the grid by adding rows and cells
     for (let x = 0; x < h; x++) {
-        let tr = matrix.insertRow(x);  //storing rows in variable
+        let tr = matrix.insertRow(x);  
         for (let y = 0; y < w; y++) {
-            let td = tr.insertCell(y); //storing columns in variable
+            let td = tr.insertCell(y);
+            //applying color to the cell
             td.addEventListener("click", function(evt) {
                 let classes = evt.target.classList;
                 let result = classes.toggle("style");
